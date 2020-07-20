@@ -3,22 +3,23 @@
  */
 package com.jingxiaocun.web.controller;
 
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import com.jingxiaocun.domain.GoodsStoreNum;
 import com.jingxiaocun.service.GoodsService;
 import com.jingxiaocun.service.impl.GoodsServiceImpl;
 import org.apache.log4j.Logger;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.util.List;
-
-//@WebServlet("/QueryStoreNumServlet")
-@RestController
+@Controller
 public class QueryStoreNumServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -39,9 +40,9 @@ public class QueryStoreNumServlet extends HttpServlet {
 		
 		GoodsStoreNum goodsStoreNum = new GoodsStoreNum();
 		
-		goodsStoreNum.setStore_name("store_name");
+		goodsStoreNum.setStore_name(store_name);
 		goodsStoreNum.setGoods_name(goods_name);
-
+		
 		try {
 			
 			List<GoodsStoreNum> list = service.queryStoreNum(goodsStoreNum);

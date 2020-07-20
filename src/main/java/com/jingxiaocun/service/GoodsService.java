@@ -1,9 +1,9 @@
 package com.jingxiaocun.service;
 
-import java.util.List;
-
 import com.jingxiaocun.domain.Goods;
 import com.jingxiaocun.domain.GoodsStoreNum;
+
+import java.util.List;
 
 public interface GoodsService {
 

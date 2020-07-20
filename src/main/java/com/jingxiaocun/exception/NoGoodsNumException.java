@@ -8,7 +8,8 @@ public class NoGoodsNumException extends Exception {
 		super();
 	}
 
-	public NoGoodsNumException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+	public NoGoodsNumException(String message, Throwable cause,
+			boolean enableSuppression, boolean writableStackTrace) {
 		super(message, cause, enableSuppression, writableStackTrace);
 	}
 

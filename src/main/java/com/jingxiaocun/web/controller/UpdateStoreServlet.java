@@ -1,24 +1,27 @@
 package com.jingxiaocun.web.controller;
 
-import com.jingxiaocun.domain.Goods;
-import com.jingxiaocun.service.GoodsService;
-import com.jingxiaocun.service.impl.GoodsServiceImpl;
-import com.jingxiaocun.utils.WebUtils;
-import com.jingxiaocun.web.formBean.InOrOutStoreFormBean;
-import org.apache.log4j.Logger;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
+
+import com.jingxiaocun.domain.Goods;
+import com.jingxiaocun.service.GoodsService;
+import com.jingxiaocun.service.impl.GoodsServiceImpl;
+import com.jingxiaocun.utils.WebUtils;
+import com.jingxiaocun.web.formBean.InOrOutStoreFormBean;
+import org.apache.log4j.Logger;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * Servlet implementation class UpdateStoreServlet
  */
-@WebServlet("/UpdateStoreServlet")
+@Controller
 public class UpdateStoreServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -30,6 +33,7 @@ public class UpdateStoreServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
+	@RequestMapping("/UpdateStoreServlet")
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 

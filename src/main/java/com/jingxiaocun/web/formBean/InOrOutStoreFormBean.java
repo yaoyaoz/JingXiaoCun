@@ -1,9 +1,9 @@
 package com.jingxiaocun.web.formBean;
 
-import org.apache.commons.beanutils.locale.converters.DateLocaleConverter;
-
 import java.util.HashMap;
 import java.util.Map;
+
+import org.apache.commons.beanutils.locale.converters.DateLocaleConverter;
 
 public class InOrOutStoreFormBean {
 

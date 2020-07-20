@@ -1,5 +1,13 @@
 package com.jingxiaocun.dal.impl;
 
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
 import com.jingxiaocun.dal.GoodsDao;
 import com.jingxiaocun.domain.Goods;
 import com.jingxiaocun.domain.GoodsStoreNum;
@@ -7,10 +15,6 @@ import com.jingxiaocun.domain.InOrOutType;
 import com.jingxiaocun.exception.NoGoodsNumException;
 import com.jingxiaocun.utils.JdbcUtils;
 import org.apache.log4j.Logger;
-
-import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 
 public class GoodsDaoImpl implements GoodsDao {
 
@@ -133,10 +137,10 @@ public class GoodsDaoImpl implements GoodsDao {
 					+ "	) b" + "	on a.goods_name=b.goods_name" + "	and a.store_name=b.store_name where 1=1";
 
 			if (goodsStoreNum.getStore_name() != null && !goodsStoreNum.getStore_name().equals("")) {
-				sql = sql + " and a.store_name = '" + goodsStoreNum.getStore_name() + "' ";
+				sql = sql + " and a.store_name like '%" + goodsStoreNum.getStore_name() + "%' ";
 			}
 			if (goodsStoreNum.getGoods_name() != null && !goodsStoreNum.getGoods_name().equals("")) {
-				sql = sql + " and a.goods_name = '" + goodsStoreNum.getGoods_name() + "' ";
+				sql = sql + " and a.goods_name like '%" + goodsStoreNum.getGoods_name() + "%' ";
 			}
 
 			st = conn.prepareStatement(sql);
@@ -153,7 +157,7 @@ public class GoodsDaoImpl implements GoodsDao {
 
 				goodsStoreNumlist.add(goodsStoreNum1);
 			}
-			logger.info("查询库存，结束，出参：goodsStoreNumlist" + goodsStoreNumlist);
+			logger.info("查询库存，结束，出参：size=" + goodsStoreNumlist.size());
 			return goodsStoreNumlist;
 
 		} catch (SQLException e) {
@@ -180,10 +184,10 @@ public class GoodsDaoImpl implements GoodsDao {
 				sql = sql + " and id = '" + goods.getId() + "'";
 			}
 			if (goods.getStore_name() != null && !goods.getStore_name().equals("")) {
-				sql = sql + " and store_name = '" + goods.getStore_name() + "' ";
+				sql = sql + " and store_name like '%" + goods.getStore_name() + "%' ";
 			}
 			if (goods.getGoods_name() != null && !goods.getGoods_name().equals("")) {
-				sql = sql + " and goods_name = '" + goods.getGoods_name() + "' ";
+				sql = sql + " and goods_name like '%" + goods.getGoods_name() + "%' ";
 			}
 			if (goods.getIn_or_out_type() != null && !goods.getIn_or_out_type().equals("")) {
 				sql = sql + " and in_or_out_type = '" + goods.getIn_or_out_type() + "' ";
@@ -208,7 +212,7 @@ public class GoodsDaoImpl implements GoodsDao {
 
 				goodsList.add(goods1);
 			}
-			logger.info("查询库存记录，结束，出参：goodsList" + goodsList);
+			logger.info("查询库存记录，结束，出参：size=" + goodsList.size());
 			return goodsList;
 
 		} catch (SQLException e) {

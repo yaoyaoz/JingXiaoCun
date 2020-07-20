@@ -9,10 +9,9 @@ import com.jingxiaocun.domain.GoodsStoreNum;
 import com.jingxiaocun.service.GoodsService;
 import org.apache.log4j.Logger;
 
-
 public class GoodsServiceImpl implements GoodsService {
 
-	GoodsDao dao = new GoodsDaoImpl();
+	GoodsDao dao = new GoodsDaoImpl();	//为什么new接口的实现的时候，有时候前面直接写接口，后面new不出实现呢？
 	
 	protected Logger logger = Logger.getLogger(getClass());
 	
