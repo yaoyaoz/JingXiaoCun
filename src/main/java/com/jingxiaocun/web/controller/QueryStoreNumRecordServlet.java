@@ -3,32 +3,20 @@
  */
 package com.jingxiaocun.web.controller;
 
-import java.io.IOException;
-import java.util.List;
-
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import com.jingxiaocun.domain.Goods;
-import com.jingxiaocun.service.GoodsService;
-import com.jingxiaocun.service.impl.GoodsServiceImpl;
-import com.jingxiaocun.utils.JxcProperties;
+import com.jingxiaocun.web.controller.base.AbstractController;
 import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@Controller
-public class QueryStoreNumRecordServlet {
-	
-	private static final long serialVersionUID = 1L;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.List;
 
-	@Autowired
-	GoodsService service;
+@Controller
+public class QueryStoreNumRecordServlet extends AbstractController {
 	
 	protected Logger logger = Logger.getLogger(getClass());
 

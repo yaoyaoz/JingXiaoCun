@@ -1,33 +1,23 @@
 package com.jingxiaocun.web.controller;
 
-import java.io.IOException;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import com.jingxiaocun.service.GoodsService;
-import com.jingxiaocun.service.impl.GoodsServiceImpl;
+import com.jingxiaocun.web.controller.base.AbstractController;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 /**
  * Servlet implementation class DeleteStoreServlet
  */
 @Controller
-public class DeleteStoreServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+public class DeleteStoreServlet extends AbstractController {
 
 	protected Logger logger = Logger.getLogger(getClass());
 
-	GoodsService service = new GoodsServiceImpl();
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	@RequestMapping("/DeleteStoreServlet")
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -46,15 +36,6 @@ public class DeleteStoreServlet extends HttpServlet {
 			request.getRequestDispatcher("/QueryStoreNumRecordServlet").forward(request, response);
 		}
 
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		doGet(request, response);
 	}
 
 }

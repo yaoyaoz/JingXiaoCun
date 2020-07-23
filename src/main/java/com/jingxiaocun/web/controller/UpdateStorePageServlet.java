@@ -3,38 +3,29 @@
  */
 package com.jingxiaocun.web.controller;
 
-import java.io.IOException;
-import java.util.List;
-
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import com.jingxiaocun.domain.Goods;
 import com.jingxiaocun.service.GoodsService;
-import com.jingxiaocun.service.impl.GoodsServiceImpl;
+import com.jingxiaocun.web.controller.base.AbstractController;
 import com.jingxiaocun.web.formBean.InOrOutStoreFormBean;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-/**
- * Servlet implementation class UpdateStoreServletPageServlet
- */
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.List;
+
 @Controller
-public class UpdateStorePageServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+public class UpdateStorePageServlet extends AbstractController {
 
 	protected Logger logger = Logger.getLogger(getClass());
 
-	GoodsService service = new GoodsServiceImpl();
+	@Autowired
+	GoodsService service;
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
 	@RequestMapping("/UpdateStorePageServlet")
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -70,15 +61,6 @@ public class UpdateStorePageServlet extends HttpServlet {
 			formBean.setIn_or_out_date(String.valueOf(goods.getIn_or_out_date()));
 		}
 		return formBean;
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		doGet(request, response);
 	}
 
 }

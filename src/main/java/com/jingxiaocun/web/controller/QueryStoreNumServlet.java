@@ -7,24 +7,18 @@ import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.jingxiaocun.domain.GoodsStoreNum;
-import com.jingxiaocun.service.GoodsService;
-import com.jingxiaocun.service.impl.GoodsServiceImpl;
+import com.jingxiaocun.web.controller.base.AbstractController;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class QueryStoreNumServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-	
-	GoodsService service = new GoodsServiceImpl();
-	
+public class QueryStoreNumServlet extends AbstractController {
+
 	protected Logger logger = Logger.getLogger(getClass());
 
 	@RequestMapping("/QueryStoreNumServlet")
@@ -44,7 +38,6 @@ public class QueryStoreNumServlet extends HttpServlet {
 		goodsStoreNum.setGoods_name(goods_name);
 		
 		try {
-			
 			List<GoodsStoreNum> list = service.queryStoreNum(goodsStoreNum);
 			request.setAttribute("list", list);
 			request.getRequestDispatcher("/index.jsp").forward(request, response);
@@ -55,8 +48,4 @@ public class QueryStoreNumServlet extends HttpServlet {
 		}
 	}
 	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
-	}
-
 }

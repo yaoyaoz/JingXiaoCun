@@ -1,4 +1,4 @@
-package com.jingxiaocun.web.controller;
+package com.jingxiaocun.web.controller.base;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
