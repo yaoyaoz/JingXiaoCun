@@ -15,10 +15,15 @@ import com.jingxiaocun.domain.InOrOutType;
 import com.jingxiaocun.exception.NoGoodsNumException;
 import com.jingxiaocun.utils.JdbcUtils;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class GoodsDaoImpl implements GoodsDao {
 
-	private JdbcUtils db = new JdbcUtils();
+	@Autowired
+	private JdbcUtils db;
+
 	private Connection conn = null;
 	private PreparedStatement st = null;
 	private ResultSet rs = null;

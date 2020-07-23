@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 import java.sql.*;
 
+@Component
 public class JdbcUtils {
 
 	protected Logger logger = Logger.getLogger(getClass());

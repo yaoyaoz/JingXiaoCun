@@ -12,7 +12,6 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties(prefix = "jxc")
 public class JxcProperties {
 
-    @Value("${jxc.mysql.url}")
     private String mysqlDriver;
 
     private String mysqlUrl;

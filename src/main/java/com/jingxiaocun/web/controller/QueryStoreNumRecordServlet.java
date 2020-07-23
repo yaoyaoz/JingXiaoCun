@@ -26,13 +26,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class QueryStoreNumRecordServlet {
 	
 	private static final long serialVersionUID = 1L;
-	
-	GoodsService service = new GoodsServiceImpl();
-	
-	protected Logger logger = Logger.getLogger(getClass());
 
 	@Autowired
-	private JxcProperties jxcProperties;
+	GoodsService service;
+	
+	protected Logger logger = Logger.getLogger(getClass());
 
 	@RequestMapping("/QueryStoreNumRecordServlet")
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -62,10 +60,6 @@ public class QueryStoreNumRecordServlet {
 			request.setAttribute("message", "查询库存失败！");
 			request.getRequestDispatcher("/message.jsp").forward(request, response);
 		}
-	}
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
 	}
 
 }
