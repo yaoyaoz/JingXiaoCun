@@ -17,7 +17,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class QueryStoreNumServlet extends AbstractController {
+public class QueryStoreNumController extends AbstractController {
 
 	protected Logger logger = Logger.getLogger(getClass());
 

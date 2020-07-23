@@ -10,11 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * Servlet implementation class DeleteStoreServlet
- */
 @Controller
-public class DeleteStoreServlet extends AbstractController {
+public class DeleteStoreController extends AbstractController {
 
 	protected Logger logger = Logger.getLogger(getClass());
 

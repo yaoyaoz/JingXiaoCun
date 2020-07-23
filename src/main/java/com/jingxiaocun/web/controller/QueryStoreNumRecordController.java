@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.util.List;
 
 @Controller
-public class QueryStoreNumRecordServlet extends AbstractController {
+public class QueryStoreNumRecordController extends AbstractController {
 	
 	protected Logger logger = Logger.getLogger(getClass());
 

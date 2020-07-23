@@ -19,7 +19,7 @@ import java.io.IOException;
 import java.util.List;
 
 @Controller
-public class UpdateStorePageServlet extends AbstractController {
+public class UpdateStorePageController extends AbstractController {
 
 	protected Logger logger = Logger.getLogger(getClass());
 
