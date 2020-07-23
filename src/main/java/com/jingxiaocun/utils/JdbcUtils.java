@@ -6,20 +6,7 @@ import org.springframework.stereotype.Component;
 
 import java.sql.*;
 
-@Component
 public class JdbcUtils {
-
-//	@Value("${mysql.driver}")
-//	private String driver;
-//
-//	@Value("${mysql.url}")
-//	private String url;
-//
-//	@Value("${mysql.username}")
-//	private String username;
-//
-//	@Value("${mysql.password}")
-//	private String password;
 
 	protected Logger logger = Logger.getLogger(getClass());
 
@@ -29,13 +16,6 @@ public class JdbcUtils {
 	public Connection getConnection() throws SQLException {
 		
 		try {
-//			InputStream in = JdbcUtils.class.getClassLoader().getResourceAsStream("db.properties");
-//			Properties prop = new Properties();
-//			prop.load(in);
-//			driver = prop.getProperty("driver");
-//			url = prop.getProperty("url");
-//			username = prop.getProperty("username");
-//			password = prop.getProperty("password");
 			Class.forName(jxcProperties.getMysqlDriver());
 			
 		} catch (Exception e) {

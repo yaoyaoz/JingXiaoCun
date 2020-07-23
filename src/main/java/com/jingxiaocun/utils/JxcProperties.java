@@ -8,12 +8,11 @@ import org.springframework.stereotype.Component;
 /**
  * @author yaoyao
  */
-//@ConfigurationProperties(prefix = "jxc")
-//@Component
-    @Configuration
+@Component
+@ConfigurationProperties(prefix = "jxc")
 public class JxcProperties {
 
-        @Value("${jxc.mysql.url}")
+    @Value("${jxc.mysql.url}")
     private String mysqlDriver;
 
     private String mysqlUrl;
