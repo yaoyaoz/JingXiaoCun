@@ -1,7 +1,7 @@
 /**
  * 库存记录查看
  */
-package com.jingxiaocun.web.controller;
+package com.jingxiaocun.web.controller.servlet;
 
 import com.jingxiaocun.domain.Goods;
 import com.jingxiaocun.web.controller.base.AbstractController;
