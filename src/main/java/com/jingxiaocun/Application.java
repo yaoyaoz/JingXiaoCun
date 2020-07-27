@@ -9,6 +9,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication  //(scanBasePackages = {"com.jingxiaocun"})
 public class Application  {//extends SpringBootServletInitializer
     public static void main(String[] args) {
+        System.out.println("[进销存] 开始启动...");
         SpringApplication.run(Application.class, args);
+        System.out.println("[进销存] 启动完成...");
     }
 }

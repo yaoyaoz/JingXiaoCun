@@ -14,7 +14,8 @@ import com.jingxiaocun.domain.GoodsStoreNum;
 import com.jingxiaocun.domain.InOrOutType;
 import com.jingxiaocun.exception.NoGoodsNumException;
 import com.jingxiaocun.utils.JdbcUtils;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -28,7 +29,7 @@ public class GoodsDaoImpl implements GoodsDao {
 	private PreparedStatement st = null;
 	private ResultSet rs = null;
 
-	protected Logger logger = Logger.getLogger(getClass());
+	protected Logger logger = LoggerFactory.getLogger(getClass());
 
 	@Override
 	public void insertGoods(Goods goods) throws Exception {
